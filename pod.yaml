@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+   name: updatedconfigmappod
+spec:
+  containers:
+    - name: configmap
+      image: nginx:latest
+      env:
+       - name: enviorenment
+         valueFrom: 
+           configMapKeyRef:
+              name: configmap
+              key: shift   
+  
